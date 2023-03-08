@@ -4,7 +4,7 @@ import Card from './components/Card';
 function App() {
   return (
     <div className="App">
-      <h1>Carga de estudiantes</h1>
+      <h1>Pokemon fav?</h1>
       <Card />
     </div>
   );
