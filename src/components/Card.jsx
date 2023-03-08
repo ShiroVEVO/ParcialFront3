@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './Card.module.css';
 
 const Card = (props) =>{
   const [nombre, setNombre] = useState('');
@@ -22,7 +23,7 @@ const Card = (props) =>{
   }
 
   return (
-    <div>
+    <div className={styles.general}>
       <label>Ingresa tu nombre:</label>
       <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
       <br />
@@ -33,7 +34,7 @@ const Card = (props) =>{
       <br />
       {error && (
         <div>
-          <p>{error}</p>
+          <p className={styles['error-message']}>{error}</p>
         </div>
       )}
       {showInfo && !error && (
@@ -47,3 +48,46 @@ const Card = (props) =>{
 }
 
 export default Card
+/*
+
+import { useState } from 'react';
+import styles from './Card.module.css'; // importa el archivo CSS
+
+const Card = (props) => {
+  const [nombre, setNombre] = useState('');
+  const [pokemon, setPokemon] = useState('');
+  const [showInfo, setShowInfo] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleButtonClick = () => {
+    if (nombre.trim().length === 0 || nombre.trim().length < 3 || pokemon.trim().length < 6) {
+      setErrorMessage('Por favor, ingrese valores válidos');
+    } else {
+      setShowInfo(true);
+      setErrorMessage('');
+    }
+  }
+
+  return (
+    <div>
+      <label>Ingresa tu nombre:</label>
+      <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+      <br />
+      <label>Input 2:</label>
+      <input type="text" value={pokemon} onChange={(e) => setPokemon(e.target.value)} />
+      <br />
+      <button onClick={handleButtonClick}>Mostrar Info</button>
+      <br />
+      {errorMessage && <p className={styles['error-message']}>{errorMessage}</p>}
+      {showInfo && (
+        <div>
+          <p>Tu nombre es: {nombre}</p>
+          <p>Tu pokemon fav: {pokemon}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Card;
+*/

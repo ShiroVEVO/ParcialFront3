@@ -1,0 +1,15 @@
+.error-message {
+    color: red;
+  }
+  
+.general{
+  background-color: rgb(166, 211, 162);
+  color: white;
+  font-weight: bold;
+  width: 20%;
+  padding: 20px;
+  border-radius: 20px;
+  position: absolute;
+  left: 40%;
+}
+
